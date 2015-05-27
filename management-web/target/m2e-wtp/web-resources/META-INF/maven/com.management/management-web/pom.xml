@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.management</groupId>
+    <artifactId>management</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.management</groupId>
+  <artifactId>management-web</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>management-web Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+   
+    <!-- for spring security -->
+    <!-- It contains core authentication and access-contol classes and interfaces. -->
+    <dependency>
+	<groupId>org.springframework.security</groupId>
+	<artifactId>spring-security-core</artifactId>
+	<version>3.2.4.RELEASE</version>
+</dependency>
+<!-- It contains filters and related web-security infrastructure code. It also enable URL based security which we are going to use in this demo. -->
+<dependency>
+	<groupId>org.springframework.security</groupId>
+	<artifactId>spring-security-web</artifactId>
+	<version>3.2.4.RELEASE</version>
+</dependency>
+<!-- It contains the security namespace parsing code. You need it if you are using the Spring Security XML file for configuration. -->
+    <dependency>
+	<groupId>org.springframework.security</groupId>
+	<artifactId>spring-security-config</artifactId>
+	<version>3.2.4.RELEASE</version>
+</dependency>
+<!-- It provides basic support for accessing security information and applying security constraints in JSPs. -->
+<dependency>
+	<groupId>org.springframework.security</groupId>
+	<artifactId>spring-security-taglibs</artifactId>
+	<version>3.2.4.RELEASE</version>
+</dependency>
+
+<dependency>
+	<groupId>commons-logging</groupId>
+	<artifactId>commons-logging</artifactId>
+	<version>1.1.1</version>
+</dependency>
+<!-- jsp api -->
+<dependency>
+	<groupId>javax.servlet.jsp</groupId>
+	<artifactId>javax.servlet.jsp-api</artifactId>
+	<version>2.2.1</version>
+</dependency>
+<dependency>
+	<groupId>javax.servlet</groupId>
+	<artifactId>javax.servlet-api</artifactId>
+	<version>3.0.1</version>
+</dependency>
+  <dependency>
+	<groupId>mysql</groupId>
+	<artifactId>mysql-connector-java</artifactId>
+	<version>5.1.26</version>
+</dependency>
+<dependency>
+	<groupId>org.springframework.data</groupId>
+	<artifactId>spring-data-jpa</artifactId>
+	<version>1.6.1.RELEASE</version>
+</dependency>
+<dependency>
+	<groupId>org.hibernate</groupId>
+	<artifactId>hibernate-entitymanager</artifactId>
+	<version>4.3.5.Final</version>
+</dependency>
+<dependency>
+ <groupId>com.management</groupId>
+ <version>0.0.1-SNAPSHOT</version>
+ <artifactId>managment-hibernate</artifactId>
+
+</dependency>
+  </dependencies>
+  <build>
+    <finalName>management-web</finalName>
+  </build>
+</project>

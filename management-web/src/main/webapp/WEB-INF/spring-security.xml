@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                                 http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+                                 http://www.springframework.org/schema/security
+                                 http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+
+    <http auto-config='true' use-expressions="true">
+		<intercept-url pattern="/login.jsp" access="permitAll" />
+		<intercept-url pattern="/client/**" access="permitAll" />
+		<intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
+		<form-login login-page='/login.jsp'
+			authentication-failure-url="/login.jsp?err=yes" />
+	</http>
+    <authentication-manager >
+        <authentication-provider>
+           <!--  <user-service>
+                <user name="mahesh" password="password" authorities="ROLE_USER" />
+            </user-service> -->
+            
+             <jdbc-user-service data-source-ref="dataSource"
+			
+				users-by-username-query=" select username as username,password from usermaster where username=?"
+				
+				authorities-by-username-query="select username as username,	role_name as authority  FROM 
+					usermaster u where username =?" />
+        </authentication-provider>
+       
+        
+          <!--  <jdbc-user-service data-source-ref="dataSource"
+			
+				users-by-username-query=" select username as username,password from user where username=?"
+				
+				authorities-by-username-query="select username as username,	role_name as authority  FROM 
+					user u where username =?" />
+        </authentication-provider> -->
+   
+        
+        
+        
+    </authentication-manager>
+ 
+</beans:beans>
